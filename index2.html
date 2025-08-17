@@ -6,38 +6,59 @@
   <title>Simon</title>
   <link rel="stylesheet" href="styles2.css">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <style>
+    .start-btn {
+      display: inline-block;
+      padding: 15px 30px;
+      margin-top: 20px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .start-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+    }
+  </style>
 </head>
 
 <body>
-  <h1 id="level-title">Press A Key to Start</h1>
+  <h1 id="level-title">Press Start to Play</h1>
+
+  <!-- Added start button -->
+  <div style="text-align:center;">
+    <button class="start-btn" id="startBtn">▶ Start Game</button>
+  </div>
+
   <div class="container">
-    <div lass="row">
-
-      <div type="button" id="green" class="btn green">
-
-      </div>
-
-      <div type="button" id="red" class="btn red">
-
-      </div>
+    <div class="row">
+      <div type="button" id="green" class="btn green"></div>
+      <div type="button" id="red" class="btn red"></div>
     </div>
 
     <div class="row">
-
-      <div type="button" id="yellow" class="btn yellow">
-
-      </div>
-      <div type="button" id="blue" class="btn blue">
-
-      </div>
-
+      <div type="button" id="yellow" class="btn yellow"></div>
+      <div type="button" id="blue" class="btn blue"></div>
     </div>
-
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="game.js" charset="utf-8"></script>
 
+  <script>
+    // Replace keypress with button click
+    $("#startBtn").click(function() {
+      if (!started) {
+        $("#level-title").text("Level " + level);
+        nextSequence();
+        started = true;
+      }
+    });
+  </script>
 </body>
-
 </html>
