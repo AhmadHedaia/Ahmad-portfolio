@@ -39,3 +39,17 @@ footer {
   font-family: 'Indie Flower', cursive;
 
 }
+
+.refresh-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        color: white;
+        font-family: 'Indie Flower', cursive;
+        font-size: 20px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
